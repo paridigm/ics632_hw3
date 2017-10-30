@@ -11,9 +11,9 @@
 #SBATCH --account=ics_632
 
 # setup vars
-epochs=3			# tests per thread amount (not needed in local testing)
+epochs=1                   # tests per thread amount (not needed in local testing)
 
-num_bytes=1000000
+num_bytes=100000000
 
 chunk_size_start=10000
 chunk_size_mult=10
@@ -21,9 +21,7 @@ chunk_size_end=$num_bytes
 
 RUN_BASICS=true
 
-BATCH_n=80
-BATCH_c=20
-BATCH_N=4
+BATCH_n=3                  # tasks/processes (only thing that matters)
 
 #
 # SLURM:
@@ -118,6 +116,7 @@ do
 			str_t=$(cat res.txt | grep "time:" | sed "s/^.*time:/time:/" | sed "s/time: //" | sed "s/ seconds//")
 			echo -n "$str_t, " >> $results_dir/$async_res
 		done
+		echo "" >> $results_dir/$async_res
 	fi
 	
 done
