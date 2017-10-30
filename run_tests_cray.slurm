@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -n 80   # Number of tasks
-#SBATCH -c 20   # Number of cores requested (MAX)
+#SBATCH -c 1   # Number of cores per node (MAX)
 #SBATCH -N 4    # Number of nodes requested (MAX)
 #SBATCH -t 300  # Runtime in minutes
 #SBATCH -o job.out # Standard out goes to this file
@@ -11,17 +11,17 @@
 #SBATCH --account=ics_632
 
 # setup vars
-epochs=1                   # tests per thread amount (not needed in local testing)
+epochs=3                   # tests per thread amount (not needed in local testing)
 
-num_bytes=100000000
+num_bytes=1000000000
 
-chunk_size_start=10000
+chunk_size_start=1000
 chunk_size_mult=10
-chunk_size_end=$num_bytes
+chunk_size_end=50000
 
 RUN_BASICS=true
 
-BATCH_n=3                  # tasks/processes (only thing that matters)
+BATCH_n=80                  # tasks/processes (only thing that matters)
 
 #
 # SLURM:
