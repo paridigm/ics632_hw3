@@ -15,7 +15,7 @@ epochs=3                   # tests per thread amount (not needed in local testin
 
 num_bytes=1000000000
 
-chunk_size_start=10000
+chunk_size_start=1000
 chunk_size_mult=10
 chunk_size_end=50000
 
