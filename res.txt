@@ -1,0 +1,7 @@
+
+
+*************************************************************************** implementation: asynchronous_pipelined_ring_bcast | chunksize: 50000 |  time: 6.679 seconds
+
+
+
+DONE
